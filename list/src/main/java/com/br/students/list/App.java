@@ -12,10 +12,13 @@ public class App {
         ArrayList<String> arlist = new ArrayList<String>();
         boolean run = true;
 
-        while (run) {
+        do {
+            System.out.println("\n");
             System.out.println("Menu");
             System.out.println("Digite 1 para inserir o estudante ");
             System.out.println("Digite 2 para imprimir a lista ");
+            System.out.println("Digite 3 para sair do Menu ");
+            System.out.println("\n");
 
             String option = scanner.nextLine();
 
@@ -31,14 +34,17 @@ public class App {
 
             } else if (option.equals("2")) {
                 System.out.println("Listando ...");
-                for (String student : arlist) {
-                    System.out.println(student);
-                }
-                run = false;
-            } else {
+                //for (String student : arlist) {
+                  //  System.out.println(student);
+                //}
+                arlist.forEach(e -> System.out.println(e));
+            } else if (option.equals("3")) {
+                break;
+            }else
                 System.out.println("Digite uma opção válida");
-            }
-        }
+
+        }while (run);
+        
         scanner.close();
     }
 }
